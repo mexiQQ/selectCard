@@ -17,12 +17,17 @@
 					url:"http://ljwtest.sinaapp.com/testJson.php",
 					dataType:"json",
 					type:"GET",
-					data:""
+					data:function (term) {
+                        return {
+                            id: term, // search term
+                        };
+                    }
 				}
 			}
 			);
 	})
 </script>
+
 </head>
 <body>
 <span id="combox"></span>

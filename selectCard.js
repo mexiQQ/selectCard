@@ -16,7 +16,7 @@
 	
 	$.fn.selectCard=function(options){
 		var options = $.extend(defaults,options);
-		console.log(options);
+		
 		return this.each(function(){
 			var _this = $(this);
 			_this = _initBorder(_this);//初始化外框CSS
@@ -28,15 +28,27 @@
 				}
 			}else{
 				$("#"+options.inputId).bind("propertychange input",function(){
+
 					var text = $("#"+options.inputId).val();
 					var $ul = _this.children('ul');
 					if(text==''){
 						$ul.empty();
 					}else{
+						var term = options.ajax.data();
+						for(var a in term)
+							var term = a;
+
 						$.ajax({
 							url:options.ajax.url,
 							type:options.ajax.type,
 							dataType:options.ajax.dataType,
+							data: function(){
+								if(options.ajax.type=="GET")
+									return term+'='+text;
+								else
+									return '{'+term+':'+text+'}';
+							}(),
+
 							timeout:5000,
 							success: function(json){
 								$ul.empty();
@@ -62,11 +74,16 @@
 		}
 			
 		function _initInput($border){//初始化输入框
+
 			if(!defaults.inputId) {
 				var input = '<input type="text" class="'+options.inputCss+'"/>';
 			}else {
 				var input = '<input type="text" class="'+options.inputCss+'" id="'+options.inputId+'"/>';
 			}
+
+		    term = $border.children('input');
+
+
 			$border.append(input);
 			$border.append('<font class="ficomoon icon-angle-bottom '+options.buttonCss+'" style="display:inline-block"></font>');
 			//绑定下拉特效
@@ -112,6 +129,10 @@
 			});
 			return $border;
 		}
+
+
+
+
 
 	}
 

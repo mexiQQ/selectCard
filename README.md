@@ -43,8 +43,12 @@
 				ajax:{
 					url:"http://ljwtest.sinaapp.com/testJson.php",
 					dataType:"json",
-					type:"POST",
-					data:""
+					type:"GET"/"POST",
+					data:function (term) {
+                        return {
+                            id: term, // search term
+                        };
+                    }
 				}
 			}
 			);
