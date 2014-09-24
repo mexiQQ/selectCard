@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>可编辑的下拉框</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="selectCard.js"></script>
+<link rel="stylesheet" href="styles/style.css" type="text/css"/>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#combox').selectCard(
+			{
+				//datas:[{id:'选项一'},{id:'选项二'},{id:'选项三'}],
+				ajax:{
+					url:"http://ljwtest.sinaapp.com/testJson.php",
+					dataType:"json",
+					type:"GET",
+					data:""
+				}
+			}
+			);
+	})
+</script>
+</head>
+<body>
+<span id="combox"></span>
+</body>
+</html>

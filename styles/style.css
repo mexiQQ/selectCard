@@ -1,0 +1,26 @@
+ul{list-style-type:none;margin:0;padding-left:0;}
+li{margin:0;}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-fl11l');
+	src:url('fonts/icomoon.eot?#iefix-fl11l') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-fl11l') format('woff'),
+		url('fonts/icomoon.ttf?-fl11l') format('truetype'),
+		url('fonts/icomoon.svg?-fl11l#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.ficomoon{font-family:'icomoon';}
+.icon-angle-top:before {content: "\f102"}.icon-angle-bottom:before {content: "\f103"}
+/*可根据自己的实际情况做修改*/
+.combox_border{border:1px solid #c2c2c2;height:28px;width:245px}
+.combox_input{border:0;line-height:25px;height:25px;padding-left: 5px;width:85%;vertical-align: middle;}
+.combox_button{width:12%;text-align:center;vertical-align: middle;cursor:pointer;border-left:1px solid #c2c2c2}
+
+
+
+.combox_select{border:1px solid #c2c2c2;border-top:0;width:100%}
+.combox_select li{overflow:hidden;height:30px;line-height:30px;cursor:pointer;}
+.combox_select a {display: block;line-height: 28px;padding: 0 8px;text-decoration: none;color: #666;}
+.combox_select a:hover {text-decoration: none;background:#f5f5f5}
