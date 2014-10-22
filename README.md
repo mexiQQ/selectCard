@@ -25,34 +25,30 @@
 本地数据：
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#combox').selectCard(
-				{
-					datas:[{id:'选项一'},{id:'选项二'},{id:'选项三'}],
-				}
-				);
-		})
+	  $(document).ready(function() {
+	    $('#combox').selectCard({
+		  datas:[{id:'选项一'},{id:'选项二'},{id:'选项三'}],
+		  });
+		});
 	</script>
 	
 远程动态数据：(根据用户输入的key值前往远程数据库查询，并返回匹配类似数据)
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#combox').selectCard(
-			{
-				ajax:{
-					url:"http://ljwtest.sinaapp.com/testJson.php",
-					dataType:"json",
-					type:"GET"/"POST",
-					data:function (term) {
-                        return {
-                            id: term, // search term
-                        };
-                    }
-				}
-			}
-			);
-	})
+	  $('#combox').selectCard({
+	    ajax:{
+	      url:"http://ljwtest.sinaapp.com/testJson.php",
+		  dataType:"json",
+		  type:"GET"/"POST",
+		  data:function (term) {
+            return {
+              id: term, // search term
+            };
+          }
+		}
+	 });
+	});
 	</script>
 
 ###4.注意
